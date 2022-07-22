@@ -1,6 +1,7 @@
 ---
-title: "scrSEIM: Skin Conductance Response and Social Expectation during Instant Messaging"
+title: 'scrSEIM: Skin Conductance Response and Social Expectation during Instant Messaging'
 output:
+  word_document: default
   html_document: default
   pdf_document: default
 ---
