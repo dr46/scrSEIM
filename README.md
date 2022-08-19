@@ -1,25 +1,16 @@
 ---
-title: 'scrSEIM: Skin Conductance Response and Social Expectation during Instant Messaging'
+title: 'scrSEIM: Skin Conductance Response and Social Expectation while Instant Messaging'
 output:
-  word_document: default
   html_document: default
+  word_document: default
   pdf_document: default
 ---
 
-# **scrSEIM: Skin Conductance Response and Social Expectation during Instant Messaging**
 
-scrSEIM: ---- description 
 
-Global project: <https://osf.io/kq2jh/>
+The scrSEIM project was created to add supplementary material to the manuscript entitled "Social Expectancy Effect while Instant Messaging as Revealed by Skin Conductance Response". This manuscript was submitted to *[Psicothema](https://www.psicothema.com/)* journal for peer review. This project is inserted in a golbal one available in this [Open Science Framework](https://osf.io/) repository: <https://osf.io/kq2jh/>
 
-*id* refers to participant identification.
-
-source files:
-
--   *key.csv*
--   *scr.Data*
--   *eform.xlsx*
--   *contacts.csv*
+All data files and R source code are available here to reproduce graphs and statistics reported in manuscript. Any question or request about this project and its content should be addressed to the last contributor of the project.  
 
 # **Folders**
 
@@ -126,7 +117,7 @@ It contains peak analysis statistics computed after smoothing SCR time series. T
 It contains variables coming from *contacts.csv*, *pas.csv*, and *eform.rds* data files. Labels are inherited from those files. New variables labels and descriptions are these:
 
 -   sas: total score for the SAS-SV scale.
--   lc: score for "looss of control" facet of the SAS-SV scale.
+-   lc: score for "loss of control" facet of the SAS-SV scale.
 -   cd: score for "cognitive disturbance" facet of the SAS-SV scale.
 -   ic: score for "ignoring consequences" facet of the SAS-SV scale.
 -   wd: score for "withdrawal" facet of the SAS-SV scale.
@@ -171,6 +162,18 @@ This file combines data from different sources. It combines the data from the el
 ### *07_comp.R*
 
 It runs analysis to compare SCR peak analysis variables in experimental and control groups. It produces the *comp.csv* file saved in the *tbl* folder.
+
+### *08_rl.R*
+
+This file runs several regression analysis to study the relationship between significant peak analysis variables and the rest of variables. The analysis results are saved in the file *lms.txt* in the *tbl* folder. The variable *add* is created on the go to code smpartphone addiction risk considering [Kwon et al. (2013)](https://doi.org/10.1371/journal.pone.0083558) cut-off for men and women.
+
+### *09_sample.R*
+
+Sample descriptive statistics.
+
+### *10_narrative.R*
+
+This file runs analysis complementing narrative presentation of results in the paper. It produces two additional files saved in the *tbl* folder. The file *cor.csv* contains correlation matrix of SCR peak characteristics and smartphone use pattern variables. The file *or-pval.csv* contains the pairwise p-values for correlations in *cor.csv* matrix.
 
 
 ## **Table files**
@@ -224,6 +227,12 @@ It contains descriptive and inferential statistics produced when comparing SCR p
 -   r: Pearson's $r$ estimation of effect size.
 -   bf.l to bf.u: Bayes Factors estimated considering different priors to analyse sensivity to priors as suggested by [Kruschke (2021)](https://doi.org/10.1038/s41562-021-01177-7). bfs.l sets the prior at $\frac{\sqrt{2}}{4}$ (labeled as 'narrow' or 'low'), bfs.m sets the prior at $\frac{\sqrt{2}}{2}$ (labeled as 'medium'), bfs.w sets the prior at $1$ (labeled as 'wide'), and bfs.u sets the prior at $\sqrt{2}$ (labeled as 'ultra wide').
 
+
+### *lms.txt*
+
+It contains multiple linear regression analysis to study significant peak analysis variables and the rest of variables in the study. 
+
+
 ## **Figure files**
 
 ### *scr.pdf*
@@ -237,6 +246,8 @@ It is the net time series resulting from subtracting the control group time seri
 ### *sbk.pdf*
 
 It is analogous to *ex_co_ts.pdf* but it cluster the time series into 30 seconds bins. Average SCR estimation for each block and the 95% confidence interval are plotted.
+
+
 
 # **References**
 

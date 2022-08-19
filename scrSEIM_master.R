@@ -1,5 +1,8 @@
 # scrSRASA master file 19/11/2021 - Initiated project.
 
+# Sample size estimation based on power analysis
+source("stx/00_pwr.R", echo = T)
+
 # Computing SCR scores
 source("stx/01_scrscores.R")
 # load("dat/indat/nscr.RData") # loads the generated object
@@ -33,18 +36,10 @@ source("stx/07_comp.R")
 .rs.restartR()
 # read.csv("tbl/comp.csv", sep = ";", dec = ",")
 
-source("stx/08_rl.R", echo = T)
- 
+source("stx/08_rl.R")
 
- 
- 
- 
- # Analysing peak responses as a function of treatment group
- 
- ......
+source("stx/09_sample.R", echo = T)
 
-merge form y peaks
-
-analysing correlations and 
+source("stx/10_narrative.R", echo = T)
 
 
