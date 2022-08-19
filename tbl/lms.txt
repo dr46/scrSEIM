@@ -6,10 +6,10 @@ Analysis of Variance Table
 
 Response: amp.su
           Df Sum Sq Mean Sq F value   Pr(>F)   
-eg         1  9.032  9.0316 10.8408 0.001466 **
-add        1  0.275  0.2752  0.3303 0.567031   
-eg:add     1  0.675  0.6750  0.8103 0.370676   
-Residuals 82 68.315  0.8331                    
+eg         1  9.032  9.0316 10.8709 0.001445 **
+add        1  0.097  0.0968  0.1165 0.733774   
+eg:add     1  1.043  1.0428  1.2551 0.265847   
+Residuals 82 68.126  0.8308                    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -18,10 +18,10 @@ Analysis of Variance Table
 
 Response: amp.sw
           Df Sum Sq Mean Sq F value  Pr(>F)  
-eg         1  4.011  4.0111  6.6916 0.01145 *
-add        1  0.029  0.0289  0.0482 0.82672  
-eg:add     1  0.769  0.7694  1.2836 0.26052  
-Residuals 82 49.153  0.5994                  
+eg         1  4.011  4.0111  6.9084 0.01024 *
+add        1  0.599  0.5987  1.0311 0.31288  
+eg:add     1  1.742  1.7423  3.0009 0.08698 .
+Residuals 82 47.610  0.5806                  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -30,10 +30,46 @@ Analysis of Variance Table
 
 Response: tr50.su
           Df Sum Sq Mean Sq F value  Pr(>F)  
-eg         1  2.739 2.73890  4.9614 0.02866 *
-add        1  0.261 0.26123  0.4732 0.49346  
-eg:add     1  0.051 0.05062  0.0917 0.76279  
-Residuals 82 45.268 0.55205                  
+eg         1  2.739 2.73890  4.9751 0.02845 *
+add        1  0.404 0.40406  0.7340 0.39410  
+eg:add     1  0.033 0.03283  0.0596 0.80768  
+Residuals 82 45.143 0.55052                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> anova(lm(amp.su ~ eg * sas, data = spc))
+Analysis of Variance Table
+
+Response: amp.su
+          Df Sum Sq Mean Sq F value   Pr(>F)   
+eg         1  9.032  9.0316 10.8535 0.001457 **
+sas        1  0.684  0.6842  0.8222 0.367195   
+eg:sas     1  0.346  0.3461  0.4159 0.520768   
+Residuals 82 68.235  0.8321                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> anova(lm(amp.sw ~ eg * sas, data = spc))
+Analysis of Variance Table
+
+Response: amp.sw
+          Df Sum Sq Mean Sq F value  Pr(>F)  
+eg         1  4.011  4.0111  6.6534 0.01168 *
+sas        1  0.000  0.0001  0.0002 0.98880  
+eg:sas     1  0.516  0.5157  0.8555 0.35772  
+Residuals 82 49.435  0.6029                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> anova(lm(tr50.su ~ eg * sas, data = spc))
+Analysis of Variance Table
+
+Response: tr50.su
+          Df Sum Sq Mean Sq F value Pr(>F)  
+eg         1  2.739 2.73890  5.0304 0.0276 *
+sas        1  0.821 0.82050  1.5070 0.2231  
+eg:sas     1  0.113 0.11296  0.2075 0.6500  
+Residuals 82 44.646 0.54447                 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -795,39 +831,87 @@ Residuals 82 45.443 0.55418
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-> anova(lm(amp.su ~ eg * aaq, data = spc))
+> anova(lm(amp.su ~ eg * aaq * sex, data = spc))
 Analysis of Variance Table
 
 Response: amp.su
-          Df Sum Sq Mean Sq F value   Pr(>F)   
-eg         1  9.032  9.0316 11.0813 0.001308 **
-aaq        1  1.400  1.3996  1.7172 0.193715   
-eg:aaq     1  1.034  1.0336  1.2681 0.263401   
-Residuals 82 66.832  0.8150                    
+           Df Sum Sq Mean Sq F value   Pr(>F)   
+eg          1  9.032  9.0316 10.7910 0.001529 **
+aaq         1  1.400  1.3996  1.6722 0.199783   
+sex         1  1.577  1.5771  1.8844 0.173774   
+eg:aaq      1  0.841  0.8412  1.0051 0.319176   
+eg:sex      1  0.075  0.0751  0.0897 0.765314   
+aaq:sex     1  0.089  0.0887  0.1059 0.745681   
+eg:aaq:sex  1  0.001  0.0010  0.0012 0.972171   
+Residuals  78 65.283  0.8370                    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-> anova(lm(amp.sw ~ eg * aaq, data = spc))
+> anova(lm(amp.sw ~ eg * aaq * sex, data = spc))
 Analysis of Variance Table
 
 Response: amp.sw
-          Df Sum Sq Mean Sq F value  Pr(>F)  
-eg         1  4.011  4.0111  6.6285 0.01183 *
-aaq        1  0.101  0.1013  0.1674 0.68354  
-eg:aaq     1  0.229  0.2291  0.3787 0.54003  
-Residuals 82 49.620  0.6051                  
+           Df Sum Sq Mean Sq F value  Pr(>F)  
+eg          1  4.011  4.0111  6.6914 0.01155 *
+aaq         1  0.101  0.1013  0.1689 0.68218  
+sex         1  1.041  1.0412  1.7369 0.19139  
+eg:aaq      1  0.157  0.1574  0.2625 0.60983  
+eg:sex      1  0.342  0.3415  0.5698 0.45263  
+aaq:sex     1  0.462  0.4617  0.7702 0.38284  
+eg:aaq:sex  1  1.091  1.0915  1.8208 0.18112  
+Residuals  78 46.756  0.5994                  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-> anova(lm(tr50.su ~ eg * aaq, data = spc))
+> anova(lm(tr50.su ~ eg * aaq * sex, data = spc))
 Analysis of Variance Table
 
 Response: tr50.su
-          Df Sum Sq Mean Sq F value  Pr(>F)  
-eg         1  2.739 2.73890  5.0391 0.02748 *
-aaq        1  0.499 0.49885  0.9178 0.34087  
-eg:aaq     1  0.511 0.51090  0.9399 0.33514  
-Residuals 82 44.570 0.54354                  
+           Df Sum Sq Mean Sq F value  Pr(>F)  
+eg          1  2.739 2.73890  5.1087 0.02659 *
+aaq         1  0.499 0.49885  0.9305 0.33772  
+sex         1  0.100 0.09996  0.1865 0.66708  
+eg:aaq      1  0.552 0.55214  1.0299 0.31333  
+eg:sex      1  1.902 1.90161  3.5470 0.06338 .
+aaq:sex     1  0.437 0.43717  0.8154 0.36930  
+eg:aaq:sex  1  0.272 0.27240  0.5081 0.47810  
+Residuals  78 41.818 0.53612                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> anova(lm(amp.su ~ eg * soc.apps, data = spc))
+Analysis of Variance Table
+
+Response: amp.su
+            Df Sum Sq Mean Sq F value   Pr(>F)   
+eg           1  9.032  9.0316 10.7729 0.001515 **
+soc.apps     1  0.235  0.2346  0.2798 0.598255   
+eg:soc.apps  1  0.285  0.2854  0.3404 0.561207   
+Residuals   82 68.745  0.8384                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> anova(lm(amp.sw ~ eg * soc.apps, data = spc))
+Analysis of Variance Table
+
+Response: amp.sw
+            Df Sum Sq Mean Sq F value  Pr(>F)  
+eg           1  4.011  4.0111  6.6882 0.01147 *
+soc.apps     1  0.209  0.2089  0.3483 0.55668  
+eg:soc.apps  1  0.564  0.5642  0.9408 0.33493  
+Residuals   82 49.178  0.5997                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> anova(lm(tr50.su ~ eg * soc.apps, data = spc))
+Analysis of Variance Table
+
+Response: tr50.su
+            Df Sum Sq Mean Sq F value  Pr(>F)  
+eg           1  2.739 2.73890  5.1073 0.02648 *
+soc.apps     1  1.598 1.59795  2.9797 0.08808 .
+eg:soc.apps  1  0.007 0.00735  0.0137 0.90712  
+Residuals   82 43.974 0.53627                  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
