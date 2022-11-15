@@ -168,8 +168,15 @@ pre code {
 </div>
 
 
-<p>The scrSEIM project was created to add supplementary material to the manuscript entitled “Social Expectancy Effect while Instant Messaging as Revealed by Skin Conductance Response”. This manuscript was submitted to <em><a href="https://www.psicothema.com/">Psicothema</a></em> journal for peer review. This project is inserted in a golbal one available in this <a href="https://osf.io/">Open Science Framework</a> repository: <a href="https://osf.io/kq2jh/" class="uri">https://osf.io/kq2jh/</a></p>
+<p>The scrSEIM project was created to add supplementary material to the manuscript entitled “Social Expectancy Effect while Instant Messaging as Revealed by Skin Conductance Response”. This manuscript was submitted to <a href="https://www.psicothema.com/"><em>Psicothema</em></a> journal for peer review. This project is inserted in a golbal one available in this <a href="https://osf.io/">Open Science Framework</a> repository: <a href="https://osf.io/kq2jh/" class="uri">https://osf.io/kq2jh/</a></p>
 <p>All data files and R source code are available here to reproduce graphs and statistics reported in manuscript. Any question or request about this project and its content should be addressed to the last contributor of the project.</p>
+<p><strong>Files and modifications produced during review process</strong></p>
+<p>Some files have been added to this project during the review process of the article. The files were created to fulfill reviewers requierements.</p>
+<ul>
+<li>Two reviewers suggested to provide statistical evidences about the equivalence of experimental and control groups. Specifically, the reviewers asked to provide evidence that both groups were equivalent in terms gender and pattern use. As a result, the file entitled “Additional Analysis Produced During Review Process” was created. The file can be accessed here: <a href="https://osf.io/m23pt" class="uri">https://osf.io/m23pt</a></li>
+<li>The <em>spc.csv</em> file was included in <em>dat</em> folder help the reader to acces source data.</li>
+<li>The README files were updated to include hyper links to files from file names.</li>
+</ul>
 <div id="folders" class="section level1">
 <h1><strong>Folders</strong></h1>
 <div id="dat" class="section level2">
@@ -194,7 +201,7 @@ pre code {
 <div id="data-files" class="section level2">
 <h2><strong>Data files</strong></h2>
 <div id="key.csv" class="section level3">
-<h3><em>key.csv</em></h3>
+<h3><a href="https://osf.io/9d5wt"><em>key.csv</em></a></h3>
 <p>It contains experimental group assignation for each participant.</p>
 <p>Variables and labes:</p>
 <ul>
@@ -207,7 +214,7 @@ pre code {
 </ul>
 </div>
 <div id="scr.rdata" class="section level3">
-<h3><em>scr.RData</em></h3>
+<h3><a href="https://osf.io/7tzvg"><em>scr.RData</em></a></h3>
 <p>It contains two R objects (matrices) where skin conductance responses can be found for each participant.</p>
 <p>Object name and brief description.</p>
 <ul>
@@ -216,7 +223,7 @@ pre code {
 </ul>
 </div>
 <div id="nscr.rdata" class="section level3">
-<h3><em>nscr.RData</em></h3>
+<h3><a href="https://osf.io/fcxp6"><em>nscr.RData</em></a></h3>
 <p>It is an R data file environment containing one object. It contains standardized net skin conductance activation. To standardize, mean and standard deviation was taken from baseline record before the distraction virtual reality task. This is the name object and the labels for each variable contained in it.</p>
 <ul>
 <li><p>zsc1: it is the standardized net skin conductance response for each participant during 360 seconds after the distraction virtual reality task. It contains the following variables:</p>
@@ -227,7 +234,7 @@ pre code {
 </ul>
 </div>
 <div id="eform.rds" class="section level3">
-<h3><em>eform.rds</em></h3>
+<h3><a href="https://osf.io/e7x9d"><em>eform.rds</em></a></h3>
 <p>It contains answers to the recruitment electronic form. These are the labels and description for each variable:</p>
 <ul>
 <li>id: participant identification code.</li>
@@ -254,11 +261,11 @@ pre code {
 </ul>
 </div>
 <div id="contacts.csv" class="section level3">
-<h3><em>contacts.csv</em></h3>
+<h3><a href="https://osf.io/3k8d5"><em>contacts.csv</em></a></h3>
 <p>This file contains information from participants in experimental condition. It contains the number of contacts (peop) each participant sent the message and the smartphone app (app) used (w = WhatsApp, i = Instagram).</p>
 </div>
 <div id="pas.csv" class="section level3">
-<h3><em>pas.csv</em></h3>
+<h3><a href="https://osf.io/2yz5h"><em>pas.csv</em></a></h3>
 <p>It contains peak analysis statistics computed after smoothing SCR time series. This is the label and description of each column:</p>
 <ul>
 <li>id: participant identification code.</li>
@@ -272,7 +279,7 @@ pre code {
 </ul>
 </div>
 <div id="spc.rds" class="section level3">
-<h3><em>spc.rds</em></h3>
+<h3><a href="https://osf.io/eutdg"><em>spc.rds</em></a></h3>
 <p>It contains variables coming from <em>contacts.csv</em>, <em>pas.csv</em>, and <em>eform.rds</em> data files. Labels are inherited from those files. New variables labels and descriptions are these:</p>
 <ul>
 <li>sas: total score for the SAS-SV scale.</li>
@@ -284,63 +291,64 @@ pre code {
 <li>aaq: total score for the AAQ-II scale.</li>
 <li>soc.apps: number of social apps always connected in participant’s smartphone.</li>
 </ul>
+<p>A csv version of this file is also included in the <em>dat</em> folder.</p>
 </div>
 </div>
 <div id="source-code-files" class="section level2">
 <h2><strong>Source code files</strong></h2>
 <div id="scrseim_master.r" class="section level3">
-<h3><em>scrSEIM_master.R</em></h3>
+<h3><a href="https://osf.io/drzym"><em>scrSEIM_master.R</em></a></h3>
 <p>Main source code file. It can be used to run all the analysis.</p>
 </div>
 <div id="pwr.r" class="section level3">
-<h3><em>00_pwr.R</em></h3>
+<h3><a href="https://osf.io/mg32p"><em>00_pwr.R</em></a></h3>
 <p>It estimates sample size based on power requirements for the experiment.</p>
 </div>
 <div id="scrscores.r" class="section level3">
-<h3><em>01_scrscores.R</em></h3>
+<h3><a href="https://osf.io/4ngqm"><em>01_scrscores.R</em></a></h3>
 <p>It computes skin conductance response scores. It generates the <em>nscr.RData</em> data file.</p>
 </div>
 <div id="ts.r" class="section level3">
-<h3><em>02_ts.R</em></h3>
+<h3><a href="https://osf.io/ghc3j"><em>02_ts.R</em></a></h3>
 <p>It processes SCR time series. It generates the graphs <em>scr.pdf</em>, <em>ex_co_ts.pdf</em>, and <em>sbk.pdf</em> (see “fig” folder). It also produces the <em>bk.csv</em> table (see “tbl” folder).</p>
 </div>
 <div id="scr_peaks.r" class="section level3">
-<h3><em>03_scr_peaks.R</em></h3>
+<h3><a href="https://osf.io/awbpy"><em>03_scr_peaks.R</em></a></h3>
 <p>It processes SCR time series to extract basic peak features (Vila Castellar and Guerra Muñoz, 2009). It produces the file <em>pas.csv</em> archived in <em>indat</em> folder.</p>
 </div>
 <div id="eform.r" class="section level3">
-<h3><em>04_eform.R</em></h3>
+<h3><a href="https://osf.io/wx8z9"><em>04_eform.R</em></a></h3>
 <p>It imports data from the electronic form (<em>eform.xlsx</em>). It produces the file <em>eform.rds</em> archived in <em>indat</em> folder.</p>
 </div>
 <div id="reli.r" class="section level3">
-<h3><em>05_reli.R</em></h3>
+<h3><a href="https://osf.io/7yrfq"><em>05_reli.R</em></a></h3>
 <p>It computes internal consistency statistics for the SAS-SV and AAQ-II scales. It produces the table <em>reliability.csv</em> saved in the <em>tbl</em> folder.</p>
 </div>
 <div id="merge.r" class="section level3">
-<h3><em>06_merge.R</em></h3>
+<h3><a href="https://osf.io/h7u3s"><em>06_merge.R</em></a></h3>
 <p>This file combines data from different sources. It combines the data from the electronic form, the data from peak analysis and data from experimental question. It produces the file <em>spc.rds</em> saved in the <em>indat</em> folder.</p>
 </div>
 <div id="comp.r" class="section level3">
-<h3><em>07_comp.R</em></h3>
+<h3><a href="https://osf.io/74hds"><em>07_comp.R</em></a></h3>
 <p>It runs analysis to compare SCR peak analysis variables in experimental and control groups. It produces the <em>comp.csv</em> file saved in the <em>tbl</em> folder.</p>
 </div>
 <div id="rl.r" class="section level3">
-<h3><em>08_rl.R</em></h3>
+<h3><a href="https://osf.io/zq7s2"><em>08_rl.R</em></a></h3>
 <p>This file runs several regression analysis to study the relationship between significant peak analysis variables and the rest of variables. The analysis results are saved in the file <em>lms.txt</em> in the <em>tbl</em> folder. The variable <em>add</em> is created on the go to code smpartphone addiction risk considering <a href="https://doi.org/10.1371/journal.pone.0083558">Kwon et al. (2013)</a> cut-off for men and women.</p>
 </div>
 <div id="sample.r" class="section level3">
-<h3><em>09_sample.R</em></h3>
+<h3><a href="https://osf.io/ar4uv"><em>09_sample.R</em></a></h3>
 <p>Sample descriptive statistics.</p>
 </div>
 <div id="narrative.r" class="section level3">
-<h3><em>10_narrative.R</em></h3>
+<h3><a href="https://osf.io/wudnb"><em>10_narrative.R</em></a></h3>
 <p>This file runs analysis complementing narrative presentation of results in the paper. It produces two additional files saved in the <em>tbl</em> folder. The file <em>cor.csv</em> contains correlation matrix of SCR peak characteristics and smartphone use pattern variables. The file <em>or-pval.csv</em> contains the pairwise p-values for correlations in <em>cor.csv</em> matrix.</p>
 </div>
 </div>
 <div id="table-files" class="section level2">
 <h2><strong>Table files</strong></h2>
 <div id="bk.csv" class="section level3">
-<h3><em>bk.csv</em></h3>
+<h3><a href="https://osf.io/p9tsq"><em>bk.csv</em></a></h3>
 <p>It contains statistics to sum up the time series for control and experimental group. The semicolon was used to separate columns and the comma was used as the decimal delimiter. Several Bayes Factors were computed to test sensitivity to prior specification by following the recommendations provided by <a href="https://doi.org/10.1038/s41562-021-01177-7">Kruschke (2021)</a>. Dissimilarity between time series were computed using cross-correlation based distances <a href="https://doi.org/10.18637/jss.v062.i01">Montero and Vilar, 2014</a>. These are the labels for each column:</p>
 <ul>
 <li>The first column (with no heading) refers to seconds in time series.</li>
@@ -359,7 +367,7 @@ pre code {
 </ul>
 </div>
 <div id="reliablility.csv" class="section level3">
-<h3><em>reliablility.csv</em></h3>
+<h3><a href="https://osf.io/exrzm"><em>reliablility.csv</em></a></h3>
 <p>It contains internal consistency statistics for the SAS-SV and AAQ-II scales. These are the labels and description variables:</p>
 <ul>
 <li>omega: McDonal’s omega internal consistency coefficient.</li>
@@ -373,7 +381,7 @@ pre code {
 </ul>
 </div>
 <div id="comp.csv" class="section level3">
-<h3><em>comp.csv</em></h3>
+<h3><a href="https://osf.io/rw6na"><em>comp.csv</em></a></h3>
 <p>It contains descriptive and inferential statistics produced when comparing SCR peak analysis variables between experimental and control group. These are the descriptions for each column.</p>
 <ul>
 <li>First column: the first column in the table refers to the comparation performed.</li>
@@ -390,22 +398,22 @@ pre code {
 </ul>
 </div>
 <div id="lms.txt" class="section level3">
-<h3><em>lms.txt</em></h3>
+<h3><a href="https://osf.io/shcyj"><em>lms.txt</em></a></h3>
 <p>It contains multiple linear regression analysis to study significant peak analysis variables and the rest of variables in the study.</p>
 </div>
 </div>
 <div id="figure-files" class="section level2">
 <h2><strong>Figure files</strong></h2>
 <div id="scr.pdf" class="section level3">
-<h3><em>scr.pdf</em></h3>
+<h3><a href="https://osf.io/an4zt"><em>scr.pdf</em></a></h3>
 <p>It compares SCR for control and experimental group during 360 seconds.</p>
 </div>
 <div id="ex_co_ts.pdf" class="section level3">
-<h3><em>ex_co_ts.pdf</em></h3>
+<h3><a href="https://osf.io/6zawf"><em>ex_co_ts.pdf</em></a></h3>
 <p>It is the net time series resulting from subtracting the control group time series to experimental time series.</p>
 </div>
 <div id="sbk.pdf" class="section level3">
-<h3><em>sbk.pdf</em></h3>
+<h3><a href="https://osf.io/bdj8r"><em>sbk.pdf</em></a></h3>
 <p>It is analogous to <em>ex_co_ts.pdf</em> but it cluster the time series into 30 seconds bins. Average SCR estimation for each block and the 95% confidence interval are plotted.</p>
 </div>
 </div>

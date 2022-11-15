@@ -2,15 +2,21 @@
 title: 'scrSEIM: Skin Conductance Response and Social Expectation while Instant Messaging'
 output:
   html_document: default
-  pdf_document: default
   word_document: default
+  pdf_document: default
 ---
 
+The scrSEIM project was created to add supplementary material to the manuscript entitled "Social Expectancy Effect while Instant Messaging as Revealed by Skin Conductance Response". This manuscript was submitted to [*Psicothema*](https://www.psicothema.com/) journal for peer review. This project is inserted in a golbal one available in this [Open Science Framework](https://osf.io/) repository: <https://osf.io/kq2jh/>
 
+All data files and R source code are available here to reproduce graphs and statistics reported in manuscript. Any question or request about this project and its content should be addressed to the last contributor of the project.
 
-The scrSEIM project was created to add supplementary material to the manuscript entitled "Social Expectancy Effect while Instant Messaging as Revealed by Skin Conductance Response". This manuscript was submitted to *[Psicothema](https://www.psicothema.com/)* journal for peer review. This project is inserted in a golbal one available in this [Open Science Framework](https://osf.io/) repository: <https://osf.io/kq2jh/>
+**Files and modifications produced during review process**
 
-All data files and R source code are available here to reproduce graphs and statistics reported in manuscript. Any question or request about this project and its content should be addressed to the last contributor of the project.  
+Some files have been added to this project during the review process of the article. The files were created to fulfill reviewers requierements.
+
+-   Two reviewers suggested to provide statistical evidences about the equivalence of experimental and control groups. Specifically, the reviewers asked to provide evidence that both groups were equivalent in terms gender and pattern use. As a result, the file entitled "Additional Analysis Produced During Review Process" was created. The file can be accessed here: <https://osf.io/m23pt>
+-   The *spc.csv* file was included in *dat* folder help the reader to acces source data.
+-   The README files were updated to include hyper links to files from file names.
 
 # **Folders**
 
@@ -34,7 +40,7 @@ It contains the figures produced.
 
 ## **Data files**
 
-### *key.csv*
+### [*key.csv*](https://osf.io/9d5wt)
 
 It contains experimental group assignation for each participant.
 
@@ -48,7 +54,7 @@ Variables and labes:
 
     -   Con: control group. Participants into this group were not induced to experience social interaction expectancy.
 
-### *scr.RData*
+### [*scr.RData*](https://osf.io/7tzvg)
 
 It contains two R objects (matrices) where skin conductance responses can be found for each participant.
 
@@ -57,7 +63,7 @@ Object name and brief description.
 -   bl1: base line, 120 seconds recording of skin conductance response before the distraction virtual reality task.
 -   sp1: 360 seconds of skin conductance response recording after virtual reality task. During the first 120 seconds participants were in resting state, during the intermediate 120 seconds participants were using their smartphones in a typical fashion, and during the last 120 seconds participants were in resting state again.
 
-### *nscr.RData*
+### [*nscr.RData*](https://osf.io/fcxp6)
 
 It is an R data file environment containing one object. It contains standardized net skin conductance activation. To standardize, mean and standard deviation was taken from baseline record before the distraction virtual reality task. This is the name object and the labels for each variable contained in it.
 
@@ -67,7 +73,7 @@ It is an R data file environment containing one object. It contains standardized
 
     -   s1 to s360: second from 1 to 360.
 
-### *eform.rds*
+### [*eform.rds*](https://osf.io/e7x9d)
 
 It contains answers to the recruitment electronic form. These are the labels and description for each variable:
 
@@ -93,12 +99,11 @@ It contains answers to the recruitment electronic form. These are the labels and
 -   sav1 to sav10: items from the Smartphone Addiction Scale - Short Version [(SAS-SV, Kwon et al., 2013)](https://doi.org/10.1371/journal.pone.0083558).
 -   aa1 to aa7: items from the Spanish version of the AAQ-II scale[(Ruiz et al., 2013)](https://doi.org/10.7334/psicothema2011.239).
 
-
-### *contacts.csv*
+### [*contacts.csv*](https://osf.io/3k8d5)
 
 This file contains information from participants in experimental condition. It contains the number of contacts (peop) each participant sent the message and the smartphone app (app) used (w = WhatsApp, i = Instagram).
 
-### *pas.csv*
+### [*pas.csv*](https://osf.io/2yz5h)
 
 It contains peak analysis statistics computed after smoothing SCR time series. This is the label and description of each column:
 
@@ -111,8 +116,7 @@ It contains peak analysis statistics computed after smoothing SCR time series. T
 -   tr50.su: 50% peak recovering time during smartphone usage.
 -   tr50.sw: 50% peak recovering time after smartphone withdrawal.
 
-
-### *spc.rds*
+### [*spc.rds*](https://osf.io/eutdg)
 
 It contains variables coming from *contacts.csv*, *pas.csv*, and *eform.rds* data files. Labels are inherited from those files. New variables labels and descriptions are these:
 
@@ -125,60 +129,61 @@ It contains variables coming from *contacts.csv*, *pas.csv*, and *eform.rds* dat
 -   aaq: total score for the AAQ-II scale.
 -   soc.apps: number of social apps always connected in participant's smartphone.
 
+A csv version of this file is also included in the *dat* folder.
+
 ## **Source code files**
 
-### *scrSEIM_master.R*
+### [*scrSEIM_master.R*](https://osf.io/drzym)
 
 Main source code file. It can be used to run all the analysis.
 
-### *00_pwr.R*
+### [*00_pwr.R*](https://osf.io/mg32p)
 
 It estimates sample size based on power requirements for the experiment.
 
-### *01_scrscores.R*
+### [*01_scrscores.R*](https://osf.io/4ngqm)
 
 It computes skin conductance response scores. It generates the *nscr.RData* data file.
 
-### *02_ts.R*
+### [*02_ts.R*](https://osf.io/ghc3j)
 
 It processes SCR time series. It generates the graphs *scr.pdf*, *ex_co_ts.pdf*, and *sbk.pdf* (see "fig" folder). It also produces the *bk.csv* table (see "tbl" folder).
 
-### *03_scr_peaks.R*
+### [*03_scr_peaks.R*](https://osf.io/awbpy)
 
 It processes SCR time series to extract basic peak features (Vila Castellar and Guerra Muñoz, 2009). It produces the file *pas.csv* archived in *indat* folder.
 
-### *04_eform.R*
+### [*04_eform.R*](https://osf.io/wx8z9)
 
 It imports data from the electronic form (*eform.xlsx*). It produces the file *eform.rds* archived in *indat* folder.
 
-### *05_reli.R*
+### [*05_reli.R*](https://osf.io/7yrfq)
 
 It computes internal consistency statistics for the SAS-SV and AAQ-II scales. It produces the table *reliability.csv* saved in the *tbl* folder.
 
-### *06_merge.R*
+### [*06_merge.R*](https://osf.io/h7u3s)
 
 This file combines data from different sources. It combines the data from the electronic form, the data from peak analysis and data from experimental question. It produces the file *spc.rds* saved in the *indat* folder.
 
-### *07_comp.R*
+### [*07_comp.R*](https://osf.io/74hds)
 
 It runs analysis to compare SCR peak analysis variables in experimental and control groups. It produces the *comp.csv* file saved in the *tbl* folder.
 
-### *08_rl.R*
+### [*08_rl.R*](https://osf.io/zq7s2)
 
 This file runs several regression analysis to study the relationship between significant peak analysis variables and the rest of variables. The analysis results are saved in the file *lms.txt* in the *tbl* folder. The variable *add* is created on the go to code smpartphone addiction risk considering [Kwon et al. (2013)](https://doi.org/10.1371/journal.pone.0083558) cut-off for men and women.
 
-### *09_sample.R*
+### [*09_sample.R*](https://osf.io/ar4uv)
 
 Sample descriptive statistics.
 
-### *10_narrative.R*
+### [*10_narrative.R*](https://osf.io/wudnb)
 
 This file runs analysis complementing narrative presentation of results in the paper. It produces two additional files saved in the *tbl* folder. The file *cor.csv* contains correlation matrix of SCR peak characteristics and smartphone use pattern variables. The file *or-pval.csv* contains the pairwise p-values for correlations in *cor.csv* matrix.
 
-
 ## **Table files**
 
-### *bk.csv*
+### [*bk.csv*](https://osf.io/p9tsq)
 
 It contains statistics to sum up the time series for control and experimental group. The semicolon was used to separate columns and the comma was used as the decimal delimiter. Several Bayes Factors were computed to test sensitivity to prior specification by following the recommendations provided by [Kruschke (2021)](https://doi.org/10.1038/s41562-021-01177-7). Dissimilarity between time series were computed using cross-correlation based distances [Montero and Vilar, 2014](https://doi.org/10.18637/jss.v062.i01). These are the labels for each column:
 
@@ -196,8 +201,7 @@ It contains statistics to sum up the time series for control and experimental gr
 -   dts: distance between raw points in time series for experimental group and control group considering both proximity and temporal behavior.
 -   r2: $r^2$ effect size estimation based on observed $t$ and computed as $\frac{t^2}{t^2 + df}$ where $df$ refer to degrees of freedom.
 
-
-### *reliablility.csv*
+### [*reliablility.csv*](https://osf.io/exrzm)
 
 It contains internal consistency statistics for the SAS-SV and AAQ-II scales. These are the labels and description variables:
 
@@ -210,8 +214,7 @@ It contains internal consistency statistics for the SAS-SV and AAQ-II scales. Th
 -   a.ll.95.ci: lower limit 95% confidence interval for Chronbach's apha internal consistency coefficient.
 -   a.ul.95.ci: upper limit 95% confidence interval for Chronbach's apha internal consistency coefficient.
 
-
-### *comp.csv*
+### [*comp.csv*](https://osf.io/rw6na)
 
 It contains descriptive and inferential statistics produced when comparing SCR peak analysis variables between experimental and control group. These are the descriptions for each column.
 
@@ -227,27 +230,23 @@ It contains descriptive and inferential statistics produced when comparing SCR p
 -   r: Pearson's $r$ estimation of effect size.
 -   bf.l to bf.u: Bayes Factors estimated considering different priors to analyse sensivity to priors as suggested by [Kruschke (2021)](https://doi.org/10.1038/s41562-021-01177-7). bfs.l sets the prior at $\frac{\sqrt{2}}{4}$ (labeled as 'narrow' or 'low'), bfs.m sets the prior at $\frac{\sqrt{2}}{2}$ (labeled as 'medium'), bfs.w sets the prior at $1$ (labeled as 'wide'), and bfs.u sets the prior at $\sqrt{2}$ (labeled as 'ultra wide').
 
+### [*lms.txt*](https://osf.io/shcyj)
 
-### *lms.txt*
-
-It contains multiple linear regression analysis to study significant peak analysis variables and the rest of variables in the study. 
-
+It contains multiple linear regression analysis to study significant peak analysis variables and the rest of variables in the study.
 
 ## **Figure files**
 
-### *scr.pdf*
+### [*scr.pdf*](https://osf.io/an4zt)
 
 It compares SCR for control and experimental group during 360 seconds.
 
-### *ex_co_ts.pdf*
+### [*ex_co_ts.pdf*](https://osf.io/6zawf)
 
 It is the net time series resulting from subtracting the control group time series to experimental time series.
 
-### *sbk.pdf*
+### [*sbk.pdf*](https://osf.io/bdj8r)
 
 It is analogous to *ex_co_ts.pdf* but it cluster the time series into 30 seconds bins. Average SCR estimation for each block and the 95% confidence interval are plotted.
-
-
 
 # **References**
 
@@ -257,6 +256,6 @@ It is analogous to *ex_co_ts.pdf* but it cluster the time series into 30 seconds
 
 -   Montero, P., and Vilar, J. A. (2014). TSclust: An R package for time series clustering. *Journal of Statistical Software, 62*, (1). <https://doi.org/10.18637/jss.v062.i01>
 
--   Ruiz, F. J., Langer Herrera, A. I., Luciano, C., Cangas, A. J., and Beltrán, I. (2013). Measuring experiential avoidance and psychological inflexibility: The Spanish version of the Acceptance and Action Questionnaire - II. *Psicothema, 25*(1), 123-129. https://doi.org/10.7334/psicothema2011.239 
+-   Ruiz, F. J., Langer Herrera, A. I., Luciano, C., Cangas, A. J., and Beltrán, I. (2013). Measuring experiential avoidance and psychological inflexibility: The Spanish version of the Acceptance and Action Questionnaire - II. *Psicothema, 25*(1), 123-129. <https://doi.org/10.7334/psicothema2011.239>
 
 -   Vila Castellar, J., and Guerra Muñoz, P. (2009). *Introducción a la psicofisiología clínica*. Síntesis.
